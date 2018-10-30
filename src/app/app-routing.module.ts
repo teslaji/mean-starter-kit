@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './admin/admin.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
   const routes: Routes = [
     {path : 'home' , component: HomeComponent},
@@ -11,6 +12,7 @@ import { AdminComponent } from './admin/admin.component';
     {path : 'register', component : RegisterComponent},
     {path : 'admin', component : AdminComponent},
     {path: '', redirectTo: 'home', pathMatch : 'full'}
+    {path: '**', component: PagenotfoundComponent}
   ];
 
 @NgModule({
