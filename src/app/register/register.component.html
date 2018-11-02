@@ -8,18 +8,18 @@
           <form class="form">
             <div class="form-group">
               <label for="">Full Name</label>
-              <input type="text" class="form-control rounded-0 " required>
+              <input [(ngModel)]="registerUserData.fullname" name="fullname" type="text" class="form-control rounded-0 " required>
             </div>
             <div class="form-group">
               <label for="">Email</label>
-              <input type="text" class="form-control rounded-0 " required>
+              <input [(ngModel)]="registerUserData.email" name="email" type="text" class="form-control rounded-0 " required>
             </div>
 
             <div class="form-group">
               <label for="">Password</label>
-              <input type="text" class="form-control rounded-0 " required>
+              <input [(ngModel)]="registerUserData.password" name="password" type="text" class="form-control rounded-0 " required>
             </div>
-            <button type="button" class="btn btn-primary">Register</button>
+            <button type="button" (click)= "registerUser()" class="btn btn-primary">Register</button>
           </form>
         </div>
       </div>
