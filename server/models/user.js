@@ -1,4 +1,3 @@
-import { ModuleExportMetadata } from '@angular/compiler-cli/src/metadata';
 const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema

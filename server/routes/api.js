@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const obj = require('./db.json')
-const User = require('./server/models/user')
 const mongoose = require('mongoose')
+const User = require('../models/user')
 const dbUrl = obj.uri
 console.log(dbUrl)
 
