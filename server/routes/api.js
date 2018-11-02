@@ -36,9 +36,7 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
   let userData = req.body
-  User.findone({
-    email: userData.email
-  }, (error, user) => {
+  User.findOne({email: userData.email}, (error, user) => {
     if (error) {
       console.log(error)
     } else {

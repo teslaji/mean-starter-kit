@@ -3,20 +3,21 @@
     <div class="card rounded-0">
       <div class="card-header">
         <h4 class="mb-0">Login</h4>
-    </div>
-        <div class="card-body">
-        
+      </div>
+      <div class="card-body">
+
         <form class="form">
           <div class="form-group">
             <label for="">Email</label>
-            <input type="text" class="form-control rounded-0 " required>
+            <input [(ngModel)]="loginUserData.email" name="email" type="text" class="form-control rounded-0 " required>
           </div>
 
           <div class="form-group">
             <label for="">Password</label>
-            <input type="text" class="form-control rounded-0 " required>
+            <input [(ngModel)]="loginUserData.password" name="password" type="text" class="form-control rounded-0 "
+              required>
           </div>
-          <button type="button" class="btn btn-success">Login</button>
+          <button (click)="loginUser()" type="button" class="btn btn-success">Login</button>
         </form>
       </div>
     </div>
