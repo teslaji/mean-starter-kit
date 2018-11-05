@@ -5,7 +5,7 @@ import { AuthService } from './auth.service';
 @Injectable()
 
 export class InterceptorService implements HttpInterceptor  {
-  constructor(private injector: Injector) { }
+  constructor( private injector: Injector) { }
   intercept( req, next ) {
     const authService = this.injector.get(AuthService);
     const tokenizedreq = req.clone({
@@ -13,6 +13,7 @@ export class InterceptorService implements HttpInterceptor  {
         Authorization: `Bearer ${authService.getToken()}`
       }
     });
+    console.log('headers:', req.headers);
     return next.handle(tokenizedreq);
   }
 }
