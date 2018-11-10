@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse"  id="navbarSupportedContent" >
       <ul class="navbar-nav mr-auto ">
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['home']" routerLinkActive="active">Home </a>
+          <a class="nav-link" *ngIf="_authService.loggedin()"[routerLink]="['home']" routerLinkActive="active">Home </a>
         </li>
         </ul>
         <ul class="navbar-nav ml-auto">

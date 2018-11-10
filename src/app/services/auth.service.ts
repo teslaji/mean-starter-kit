@@ -12,23 +12,27 @@ export class AuthService {
   private _registeredUrl = 'http://localhost:3000/api/register';
   private _loginUrl = 'http://localhost:3000/api/login';
 
-  constructor(private http: HttpClient, private _router: Router) {}
+  constructor(private http: HttpClient, private _router: Router) { }
 
-    registerUser(user)  {
-      return this.http.post<any>(this._registeredUrl, user);
-   }
-    loginUser(user)  {
+  registerUser(user) {
+    return this.http.post<any>(this._registeredUrl, user);
+  }
+
+  loginUser(user) {
     return this.http.post<any>(this._loginUrl, user);
-   }
-    loggedin() {
-     return !!localStorage.getItem('token');
-   }
-   logoutUser() {
-     localStorage.removeItem('token');
-     this._router.navigate(['login']);
 
-   }
-   getToken() {
-     return localStorage.getItem('token');
-   }
+  }
+
+  loggedin() {
+    return !!localStorage.getItem('token');
+  }
+
+  logoutUser() {
+    localStorage.removeItem('token');
+    this._router.navigate(['login']);
+
+  }
+  getToken() {
+    return localStorage.getItem('token');
+  }
 }
